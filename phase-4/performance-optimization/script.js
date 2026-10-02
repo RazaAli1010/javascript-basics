@@ -112,3 +112,14 @@
 
 // clearInterval, clearTimeout
 
+function myFilter(arr,callback){
+    let newArray=[]
+    for (let i=0; i<arr.length;i++){
+        if (callback(arr[i], i, arr)){
+            newArray.push(arr[i])
+        }
+    }
+    return newArray
+}
+
+let answerArr=myFilter([1,2,3,4], (num)=> num<5)
